@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Thesium</title>
+  <meta name="description" content="Thesium privacy policy. We don't collect, transmit, or share personal information.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="/">Thesium</a></div>
+    <nav>
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">Last updated April 18, 2026</p>
+    <h1>Privacy Policy</h1>
+
+    <p class="lead">
+      Thesium does not collect, transmit, store, or share any personal
+      information. The short version: your data stays on your Mac.
+    </p>
+
+    <h2>What we collect</h2>
+    <p>
+      <strong>Nothing.</strong> Thesium has no analytics, no tracking,
+      no telemetry, no advertising identifiers, and no third-party
+      data partners.
+    </p>
+
+    <h2>Portfolio data</h2>
+    <p>
+      If you import a portfolio CSV, it's read by Thesium via macOS's
+      file picker and cached locally at:
+    </p>
+    <p>
+      <code>~/Library/Application Support/Thesium/</code>
+    </p>
+    <p>
+      Portfolio data — holdings, account names, ticker symbols, lot
+      sizes, cost basis, gain/loss — is never transmitted off your
+      Mac. It is not sent to our servers, not synced to the cloud,
+      and not shared with any third party. Removing the app removes
+      the data; you can also clear it manually from Settings →
+      Portfolio Management → Delete Portfolio.
+    </p>
+
+    <h2>Network requests</h2>
+    <p>
+      The app makes outbound network requests for two purposes only:
+    </p>
+    <ol>
+      <li>
+        <strong>Market snapshot fetch.</strong> Thesium downloads a
+        publicly-available JSON snapshot of macro and risk-family data
+        from
+        <code>thesium-api.christopher-54d.workers.dev</code>
+        (a Cloudflare Worker we operate). These requests are
+        unauthenticated and contain no user identifier.
+      </li>
+      <li>
+        <strong>Subscription validation.</strong> If you subscribe to
+        Thesium Pro through the Mac App Store, Apple's StoreKit
+        framework verifies the receipt with Apple's servers. We do
+        not see, store, or process payment information; that's
+        handled entirely by Apple.
+      </li>
+    </ol>
+    <p>
+      No other network traffic originates from the app.
+    </p>
+
+    <h2>Diagnostics</h2>
+    <p>
+      The app does not collect crash reports or diagnostic logs.
+      macOS's system-wide crash reporter (which you can opt into via
+      System Settings) may forward anonymized crashes to Apple, who
+      may share them with us in aggregate App Analytics; that channel
+      is governed by your Apple privacy settings, not by Thesium.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      Thesium is rated 4+ but is not directed at children under 13.
+      We do not knowingly collect any information from anyone, of any
+      age.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      If this policy changes, the "Last updated" date above will
+      reflect the change and the prior version will remain available
+      in our git history at
+      <a href="https://github.com/miniforge-ai/thesium/commits/main/marketing/privacy.html">
+        github.com/miniforge-ai/thesium</a>.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Privacy questions:
+      <a href="mailto:privacy@miniforge.ai">privacy@miniforge.ai</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/">Home</a>
+    <a href="/support">Support</a>
+    <a href="/privacy">Privacy</a>
+    <div class="muted" style="margin-top:8px;">
+      © 2026 Miniforge.ai
+    </div>
+  </footer>
+</body>
+</html>
