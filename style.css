@@ -1,18 +1,25 @@
-/* Thesium marketing site — single shared stylesheet.
-   Design language matches the app: serif headings, warm accent
-   (matches the AppIcon shield gradient), ink-on-paper light theme.
-   Stays simple on purpose — privacy/support pages need to load
-   instantly and look credible to an App Store reviewer. */
+/* Brand draft B — Aurora.
+   Outer surround: #1E1B4B → #312E81 (deep→mid indigo gradient).
+   Content panels: #3d005b → #660099 (rich purple range), full opacity
+   so the brand color carries the focus area; the indigo surround
+   reads as a calm frame.
+   CTAs: #ffc721 gold + #ffe158 bright yellow with deep-indigo text
+   for high contrast — yellow buttons with white text were unreadable. */
 
 :root {
-  --background: #faf6f0;
-  --panel:      #ffffff;
-  --ink:        #2a2520;
-  --muted:      #756c62;
-  --border:     #e8e0d4;
-  --accent:     #9c3e1f;     /* matches AppIcon warm shield */
-  --accent-soft:#f4d8c8;
-  --max-width:  720px;
+  --bg-deep:        #1E1B4B;
+  --bg-mid:         #312E81;
+  --panel:          #3d005b;
+  --panel-bright:   #660099;
+  --ink:            #fffaf1;
+  --ink-strong:     #ffffff;
+  --muted:          #d1b2e0;
+  --border:         rgba(143, 96, 200, 0.35);
+  --accent:         #ffc721;
+  --accent-bright:  #ffe158;
+  --accent-soft:    rgba(255, 199, 33, 0.16);
+  --on-accent:      #1E1B4B;
+  --max-width:      720px;
 }
 
 * { box-sizing: border-box; }
@@ -20,7 +27,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--background);
+  background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   font-size: 17px;
@@ -28,14 +36,22 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(255, 199, 33, 0.4); }
+a:hover { border-bottom-color: var(--accent); }
 
-main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 48px 24px 96px;
+/* Yellow CTA button helper — used by .button class */
+.button, button.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
 }
+.button:hover { background: var(--accent-bright); border-bottom: none; }
 
 header.site-header {
   border-bottom: 1px solid var(--border);
@@ -43,25 +59,19 @@ header.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--panel);
+  background: rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
 }
-
 header.site-header .brand {
   font-family: ui-serif, Georgia, "Times New Roman", serif;
   font-size: 20px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--accent);
+  letter-spacing: 0.01em;
 }
-
-header.site-header .brand a {
-  color: var(--ink);
-}
-
-header.site-header nav a {
-  color: var(--muted);
-  font-size: 14px;
-  margin-left: 20px;
-}
+header.site-header .brand a { color: var(--accent); border-bottom: none; }
+header.site-header nav a   { color: var(--muted); font-size: 14px; margin-left: 20px; border-bottom: none; }
+header.site-header nav a:hover { color: var(--accent-bright); }
 
 footer.site-footer {
   border-top: 1px solid var(--border);
@@ -69,59 +79,48 @@ footer.site-footer {
   text-align: center;
   color: var(--muted);
   font-size: 13px;
-  background: var(--panel);
+  background: rgba(0, 0, 0, 0.25);
+}
+footer.site-footer a { margin: 0 10px; color: var(--muted); border-bottom: none; }
+
+/* Content panel — rich purple, sits inside the indigo surround.
+   Slight transparency so the indigo gradient still reads through
+   the edges (otherwise the two-tone collapses to "purple on dark"). */
+main {
+  max-width: var(--max-width);
+  margin: 32px auto 64px;
+  padding: 48px 40px 64px;
+  background: linear-gradient(160deg, var(--panel) 0%, var(--panel-bright) 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
 }
 
-footer.site-footer a {
-  margin: 0 10px;
-  color: var(--muted);
+/* Hero wordmark — shown above the h1 on the landing page. Full
+   color logo (Eye of Horus icon + "Thesium" + "INSIGHTS THAT MATTER"
+   tagline), sized to feel like a masthead without dwarfing the copy
+   that follows. */
+.hero-logo {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin: 0 auto 28px;
 }
 
 h1, h2, h3 {
   font-family: ui-serif, Georgia, "Times New Roman", serif;
-  color: var(--ink);
+  color: var(--ink-strong);
   letter-spacing: -0.01em;
 }
-
 h1 { font-size: 36px; margin: 0 0 12px; line-height: 1.15; }
 h2 { font-size: 24px; margin: 36px 0 10px; }
 h3 { font-size: 19px; margin: 24px 0 8px; }
 
-.lead {
-  font-size: 19px;
-  color: var(--muted);
-  margin: 0 0 28px;
-}
-
-.eyebrow {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  text-transform: uppercase;
-  margin: 0 0 12px;
-}
-
-.muted {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-ul, ol { padding-left: 22px; }
-li { margin: 6px 0; }
-
-code {
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 14px;
-  background: var(--accent-soft);
-  padding: 1px 6px;
-  border-radius: 4px;
-}
-
-.callout {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 20px;
-  margin: 20px 0;
-}
+.lead     { font-size: 19px; color: var(--muted); margin: 0 0 28px; }
+.eyebrow  { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--accent-bright); text-transform: uppercase; margin: 0 0 12px; }
+.muted    { color: var(--muted); font-size: 14px; }
+ul, ol    { padding-left: 22px; }
+li        { margin: 6px 0; }
+code      { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 14px; background: var(--accent-soft); color: var(--accent-bright); padding: 1px 6px; border-radius: 4px; border: 1px solid rgba(255, 199, 33, 0.25); }
+.callout  { background: rgba(0, 0, 0, 0.20); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin: 20px 0; }

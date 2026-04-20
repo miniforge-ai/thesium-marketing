@@ -12,15 +12,20 @@ Store submission, or Apple hard-rejects.
 ## Layout
 
 ```
-index.html     — landing page
-privacy.html   — Privacy Policy (App Store-required)
-support.html   — Support page (App Store-required)
-404.html       — fallback
-style.css      — shared stylesheet (no framework, no JS)
-aurora/        — A/B variant at /aurora/ (gold + indigo brand)
-royal/         — A/B variant at /royal/  (purple + champagne brand)
-wrangler.toml  — Cloudflare Workers + Static Assets config
+index.html           — landing page
+privacy.html         — Privacy Policy (App Store-required)
+support.html         — Support page (App Store-required)
+404.html             — fallback
+style.css            — shared stylesheet (no framework, no JS)
+favicon.png          — 32×32 browser favicon
+apple-touch-icon.png — 180×180 iOS home-screen icon
+assets/logo.svg      — Thesium wordmark (gold on transparent), used
+                       as the landing-page hero
+wrangler.toml        — Cloudflare Workers + Static Assets config
 ```
+
+The site uses the Aurora brand: deep indigo surround, rich purple
+content panels, gold CTAs. Eye of Horus + wordmark in the header.
 
 Cloudflare's default extension-stripping serves `/privacy` from
 `privacy.html` automatically, so the App Store URLs
