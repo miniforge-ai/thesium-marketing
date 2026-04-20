@@ -12,7 +12,7 @@
 # Cloudflare's default extension-stripping serves
 # /privacy → privacy.html and /support → support.html.
 
-name = "thesium-marketing"
+name = "thesium-risk"
 compatibility_date = "2026-04-19"
 
 [assets]
