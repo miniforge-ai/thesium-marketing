@@ -1,0 +1,20 @@
+# Cloudflare Workers + Static Assets configuration for the Thesium
+# marketing site at https://thesium.app.
+#
+# Zero-build static deploy — no `main` Worker, just an [assets]
+# block that uploads everything in the repo root. Cloudflare's
+# Workers Builds runs `wrangler deploy` against this file on every
+# push to main.
+#
+# The macOS app's App Store Connect listing points at
+# https://thesium.app/privacy and https://thesium.app/support;
+# those URLs MUST resolve or Apple hard-rejects the submission.
+# Cloudflare's default extension-stripping serves
+# /privacy → privacy.html and /support → support.html.
+
+name = "thesium-marketing"
+compatibility_date = "2026-04-19"
+
+[assets]
+directory = "./"
+not_found_handling = "404-page"
