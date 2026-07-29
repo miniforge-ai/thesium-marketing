@@ -3,40 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{var t=localStorage.getItem("thesium-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
   <title>Not Found — Thesium</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
   <header class="site-header">
-    <div class="brand"><a href="/">Thesium</a></div>
-    <nav>
-      <a href="https://apps.apple.com/us/app/thesium/id6761789951?mt=12">Mac App Store</a>
-      <a href="/support">Support</a>
-      <a href="/privacy">Privacy</a>
-    </nav>
+    <div class="frame">
+      <a class="brand" href="/">Thesium</a>
+      <nav class="site-nav" aria-label="Products">
+        <a href="/risk">Risk</a>
+        <a href="/career">Career</a>
+        <a href="/time">Time</a>
+        <a href="/research">Research</a>
+        <a href="/support">Support</a>
+      </nav>
+      <button class="theme-toggle" type="button">light</button>
+    </div>
   </header>
 
   <main>
-    <section class="prose-section">
-      <div class="container narrow">
+    <section class="band">
+      <div class="frame narrow">
         <p class="eyebrow">404</p>
         <h1>That page doesn't exist.</h1>
         <p class="lead">
-          Try the <a href="/">home page</a>, or jump to
-          <a href="/support">support</a> /
-          <a href="/privacy">privacy</a>.
+          Pick a product, or head back to the
+          <a href="/">register</a>.
         </p>
+        <div class="cta-row">
+          <a class="button button-quiet" href="/risk">Risk</a>
+          <a class="button button-quiet" href="/career">Career</a>
+          <a class="button button-quiet" href="/time">Time</a>
+          <a class="button button-quiet" href="/research">Research</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <a href="/">Home</a>
-    <a href="https://apps.apple.com/us/app/thesium/id6761789951?mt=12">Mac App Store</a>
-    <a href="/support">Support</a>
-    <a href="/privacy">Privacy</a>
+    <div class="frame">
+      <div class="footer-grid">
+        <div>
+          <h2>Products</h2>
+          <ul>
+            <li><a href="/risk">Thesium Risk</a></li>
+            <li><a href="/career">Thesium Career</a></li>
+            <li><a href="/time">Thesium Time</a></li>
+            <li><a href="/research">Thesium Research</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Thesium Risk</h2>
+          <ul>
+            <li><a href="https://apps.apple.com/us/app/thesium/id6761789951?mt=12">Mac App Store</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/privacy">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:support@miniforge.ai">support@miniforge.ai</a></li>
+            <li><a href="mailto:privacy@miniforge.ai">privacy@miniforge.ai</a></li>
+            <li><a href="https://miniforge.ai">miniforge.ai</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="colophon">
+        Thesium is a product line of Miniforge AI. © 2026 Miniforge.ai.
+      </p>
+    </div>
   </footer>
+
+  <script src="/assets/theme.js"></script>
 </body>
 </html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{var t=localStorage.getItem("thesium-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <title>Thesium Risk — portfolio risk intelligence for macOS</title>
+  <meta name="description" content="Thesium Risk reads macro regime indicators, risk-family signals, and your own portfolio into one local-first macOS dashboard. Your holdings stay on your Mac.">
+  <link rel="canonical" href="https://thesium.me/risk">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thesium.me/risk">
+  <meta property="og:title" content="Thesium Risk — portfolio risk intelligence for macOS">
+  <meta property="og:description" content="Macro regime, risk-family signals, and your own portfolio in one local-first macOS app.">
+  <meta property="og:image" content="https://thesium.me/assets/logo.svg">
+</head>
+<body>
+  <header class="site-header">
+    <div class="frame">
+      <a class="brand" href="/">Thesium</a>
+      <nav class="site-nav" aria-label="Products">
+        <a href="/risk" aria-current="page">Risk</a>
+        <a href="/career">Career</a>
+        <a href="/time">Time</a>
+        <a href="/research">Research</a>
+        <a href="/support">Support</a>
+      </nav>
+      <button class="theme-toggle" type="button">light</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="band">
+      <div class="frame">
+        <p class="eyebrow">Thesium Risk</p>
+        <h1>Portfolio risk intelligence, on your Mac.</h1>
+        <p class="lead">
+          Thesium Risk pulls macro regime indicators, risk-family signals,
+          and your own portfolio into one dashboard. Your holdings stay on
+          your Mac. The picture refreshes every market day.
+        </p>
+        <div class="cta-row">
+          <a class="app-store-cta" href="https://apps.apple.com/us/app/thesium/id6761789951?mt=12" aria-label="Download Thesium on the Mac App Store">
+            <img src="/assets/mac-app-store-badge.svg" alt="Download on the Mac App Store" width="180" height="46">
+          </a>
+          <p class="small muted">Free · macOS 14+ · Apple silicon &amp; Intel</p>
+        </div>
+        <p class="small muted spaced">
+          Listed on the Mac App Store as <strong>Thesium</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section class="band band-tint">
+      <div class="frame">
+        <p class="eyebrow">What it does</p>
+        <h2>Four pieces, one window.</h2>
+        <div class="columns">
+          <div class="col">
+            <h3>Macro regime, at a glance</h3>
+            <p>
+              A composite regime score plus risk-family buckets —
+              valuation, credit spreads, liquidity, employment, and more —
+              each carrying a confidence rating you can see.
+            </p>
+          </div>
+          <div class="col">
+            <h3>Drill into any family</h3>
+            <p>
+              Open a family to see the leaf metrics behind its bucket:
+              Shiller CAPE, HY OAS, put/call ratio, SLOS tightening, and
+              the rest — sourced and timestamped.
+            </p>
+          </div>
+          <div class="col">
+            <h3>Your portfolio in context</h3>
+            <p>
+              Import a Fidelity, Schwab, Vanguard, E*TRADE, Ameriprise, or
+              Empower export to see exposures against the current regime.
+              Your CSV stays on your Mac.
+            </p>
+          </div>
+          <div class="col">
+            <h3>Heimdall signal engine</h3>
+            <p>
+              Watches the snapshot diff and flags regime transitions,
+              family bucket changes, and concentration risk — so the
+              picture doesn't quietly change underneath you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="frame">
+        <p class="eyebrow">Thesium Risk Pro</p>
+        <h2>Live data and research lenses.</h2>
+        <p>
+          Pro adds daily snapshot refresh, deeper research lenses across
+          Value, Dividend &amp; Income, Quality, Growth, and Formula
+          families, and the live research catalog. The free tier ships the
+          full macro and portfolio dashboard with weekly snapshots.
+        </p>
+        <p class="small muted">
+          Pro is an in-app subscription, billed by Apple. Manage or cancel
+          from <strong>System Settings → Apple Account → Subscriptions</strong>.
+        </p>
+
+        <div class="note">
+          <strong>Thesium Risk is an information tool, not investment
+          advice.</strong> Miniforge AI is not a registered investment
+          adviser, broker-dealer, or financial planner, and nothing the
+          app produces is a recommendation to buy or sell any security.
+          Regime scores and risk-family buckets are derived from public
+          data that may be stale, revised, or wrong. You are responsible
+          for your own investment decisions.
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-tint2">
+      <div class="frame">
+        <p class="eyebrow">Specification</p>
+        <h2>What it reads, and where it runs.</h2>
+        <div class="entry spaced" data-state="shipped">
+          <div class="entry-head">
+            <h3 class="entry-name">Thesium Risk</h3>
+            <p class="status" data-state="shipped">Shipped</p>
+          </div>
+          <dl class="spec">
+            <dt>Reads</dt>
+            <dd>Broker CSV exports, public macro and market snapshots</dd>
+            <dt>Produces</dt>
+            <dd>Composite regime score, risk-family buckets with confidence ratings, portfolio exposures, Heimdall change alerts</dd>
+            <dt>Runs on</dt>
+            <dd>macOS 14+, Apple silicon and Intel. About 50&nbsp;MB of disk.</dd>
+            <dt>Network</dt>
+            <dd>Snapshot fetch and Apple receipt validation only. Portfolio data never leaves the machine — see the <a href="/privacy">privacy policy</a>.</dd>
+            <dt>Support</dt>
+            <dd><a href="mailto:support@miniforge.ai">support@miniforge.ai</a>, or the <a href="/support">support page</a></dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="frame">
+      <div class="footer-grid">
+        <div>
+          <h2>Products</h2>
+          <ul>
+            <li><a href="/risk">Thesium Risk</a></li>
+            <li><a href="/career">Thesium Career</a></li>
+            <li><a href="/time">Thesium Time</a></li>
+            <li><a href="/research">Thesium Research</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Thesium Risk</h2>
+          <ul>
+            <li><a href="https://apps.apple.com/us/app/thesium/id6761789951?mt=12">Mac App Store</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/privacy">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:support@miniforge.ai">support@miniforge.ai</a></li>
+            <li><a href="mailto:privacy@miniforge.ai">privacy@miniforge.ai</a></li>
+            <li><a href="https://miniforge.ai">miniforge.ai</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="colophon">
+        Thesium is a product line of Miniforge AI. © 2026 Miniforge.ai.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/theme.js"></script>
+</body>
+</html>
