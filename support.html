@@ -3,123 +3,165 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>try{var t=localStorage.getItem("thesium-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
   <title>Support — Thesium</title>
   <meta name="description" content="Get help with Thesium. Email support, common questions, and where to report bugs.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://thesium.me/support">
+  <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
   <header class="site-header">
-    <div class="brand"><a href="/">Thesium</a></div>
-    <nav>
-      <a href="https://apps.apple.com/us/app/thesium/id6761789951?mt=12">Mac App Store</a>
-      <a href="/support">Support</a>
-      <a href="/privacy">Privacy</a>
-    </nav>
+    <div class="frame">
+      <a class="brand" href="/">Thesium</a>
+      <nav class="site-nav" aria-label="Products">
+        <a href="/risk">Risk</a>
+        <a href="/career">Career</a>
+        <a href="/time">Time</a>
+        <a href="/research">Research</a>
+        <a href="/support" aria-current="page">Support</a>
+      </nav>
+      <button class="theme-toggle" type="button">light</button>
+    </div>
   </header>
 
   <main>
-    <section class="prose-section">
-      <div class="container narrow">
-    <p class="eyebrow">We typically respond within one business day.</p>
-    <h1>Support</h1>
+    <section class="band">
+      <div class="frame narrow prose">
+        <p class="eyebrow">We typically respond within one business day</p>
+        <h1>Support</h1>
 
-    <p class="lead">
-      Thesium is a small, self-funded product. The fastest way to
-      reach us is email — we read every message.
-    </p>
+        <p class="lead">
+          Thesium is a small, self-funded product line. The fastest way to
+          reach us is email — we read every message.
+        </p>
 
-    <div class="callout">
-      <strong>Email:</strong>
-      <a href="mailto:support@miniforge.ai">support@miniforge.ai</a>
-    </div>
+        <div class="callout">
+          <strong>Email:</strong>
+          <a href="mailto:support@miniforge.ai">support@miniforge.ai</a>
+        </div>
 
-    <h2>Frequently asked questions</h2>
+        <p class="muted small">
+          The questions below cover <a href="/risk">Thesium Risk</a>, the
+          macOS app on the Mac App Store, listed there as
+          <strong>Thesium</strong>. For the other products see
+          <a href="/career">Career</a>, <a href="/time">Time</a>, and
+          <a href="/research">Research</a>.
+        </p>
 
-    <h3>Where does Thesium store my portfolio data?</h3>
-    <p>
-      Locally on your Mac, in
-      <code>~/Library/Application Support/Thesium/</code>. It's never
-      transmitted off-device. See the
-      <a href="/privacy">privacy policy</a> for details.
-    </p>
+        <h2>Frequently asked questions</h2>
 
-    <h3>What CSV format does the portfolio importer expect?</h3>
-    <p>
-      Thesium reads the standard Fidelity portfolio export format
-      (<em>Accounts → Positions → Download</em> from the Fidelity
-      web portal). Other brokers' exports may work if the column
-      headers happen to match; if your broker isn't recognized, email
-      us a sample (with personal info redacted) and we'll add support.
-    </p>
+        <h3>Where does Thesium Risk store my portfolio data?</h3>
+        <p>
+          Locally on your Mac, in
+          <code>~/Library/Application Support/Thesium/</code>. It's never
+          transmitted off-device. See the
+          <a href="/privacy">privacy policy</a> for details.
+        </p>
 
-    <h3>How do I cancel a subscription?</h3>
-    <p>
-      Subscriptions are billed by Apple. Open
-      <strong>System Settings → Apple Account → Media &amp;
-      Purchases → Subscriptions</strong> to manage or cancel.
-      Thesium itself doesn't store payment information and can't
-      issue refunds; Apple's
-      <a href="https://reportaproblem.apple.com/">Report a Problem</a>
-      page handles refund requests.
-    </p>
+        <h3>What CSV format does the portfolio importer expect?</h3>
+        <p>
+          Thesium Risk reads the standard Fidelity portfolio export format
+          (<em>Accounts → Positions → Download</em> from the Fidelity web
+          portal). Other brokers' exports may work if the column headers
+          happen to match; if your broker isn't recognized, email us a
+          sample (with personal info redacted) and we'll add support.
+        </p>
 
-    <h3>Why is my portfolio missing from the Portfolio tab?</h3>
-    <p>
-      The cache lives in
-      <code>~/Library/Application Support/Thesium/</code>. macOS may
-      relocate Application Support contents during a Time Machine
-      restore or migration; if your portfolio disappears, re-import
-      the CSV from <strong>Settings → Portfolio Management → Re-import
-      Portfolio</strong>.
-    </p>
+        <h3>How do I cancel a subscription?</h3>
+        <p>
+          Subscriptions are billed by Apple. Open
+          <strong>System Settings → Apple Account → Media &amp;
+          Purchases → Subscriptions</strong> to manage or cancel.
+          Thesium itself doesn't store payment information and can't
+          issue refunds; Apple's
+          <a href="https://reportaproblem.apple.com/">Report a Problem</a>
+          page handles refund requests.
+        </p>
 
-    <h3>What does the "Confidence" column mean on the Risk page?</h3>
-    <p>
-      Each risk family's confidence rating reflects how recently its
-      underlying data was published. Some indicators (FRED weekly
-      series) update once a week; others (daily market series) update
-      every market close. Low confidence means we're working with
-      stale data and the bucket may shift when the next publication
-      arrives.
-    </p>
+        <h3>Why is my portfolio missing from the Portfolio tab?</h3>
+        <p>
+          The cache lives in
+          <code>~/Library/Application Support/Thesium/</code>. macOS may
+          relocate Application Support contents during a Time Machine
+          restore or migration; if your portfolio disappears, re-import
+          the CSV from <strong>Settings → Portfolio Management → Re-import
+          Portfolio</strong>.
+        </p>
 
-    <h3>I found a bug.</h3>
-    <p>
-      Email
-      <a href="mailto:support@miniforge.ai">support@miniforge.ai</a>
-      with steps to reproduce. If it's a crash, the macOS crash
-      report (<strong>Console.app → Crash Reports</strong>) is
-      especially helpful.
-    </p>
+        <h3>What does the "Confidence" column mean on the Risk page?</h3>
+        <p>
+          Each risk family's confidence rating reflects how recently its
+          underlying data was published. Some indicators (FRED weekly
+          series) update once a week; others (daily market series) update
+          every market close. Low confidence means we're working with
+          stale data and the bucket may shift when the next publication
+          arrives.
+        </p>
 
-    <h2>System requirements</h2>
-    <ul>
-      <li>macOS 14 (Sonoma) or later — Apple Silicon and Intel both supported.</li>
-      <li>About 50 MB of disk space.</li>
-      <li>An internet connection for the daily snapshot refresh
-        (the app works offline against the bundled snapshot).</li>
-    </ul>
+        <h3>I found a bug.</h3>
+        <p>
+          Email
+          <a href="mailto:support@miniforge.ai">support@miniforge.ai</a>
+          with steps to reproduce. If it's a crash, the macOS crash
+          report (<strong>Console.app → Crash Reports</strong>) is
+          especially helpful.
+        </p>
 
-    <h2>Privacy &amp; data</h2>
-    <p>
-      Thesium does not collect, transmit, or share any personal
-      information. See the <a href="/privacy">privacy policy</a> for
-      the full disclosure.
-    </p>
+        <h2>System requirements</h2>
+        <ul>
+          <li>macOS 14 (Sonoma) or later — Apple silicon and Intel both supported.</li>
+          <li>About 50 MB of disk space.</li>
+          <li>An internet connection for the daily snapshot refresh
+            (the app works offline against the bundled snapshot).</li>
+        </ul>
+
+        <h2>Privacy &amp; data</h2>
+        <p>
+          Thesium Risk does not collect, transmit, or share any personal
+          information. See the <a href="/privacy">privacy policy</a> for
+          the full disclosure.
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <a href="/">Home</a>
-    <a href="https://apps.apple.com/us/app/thesium/id6761789951?mt=12">Mac App Store</a>
-    <a href="/support">Support</a>
-    <a href="/privacy">Privacy</a>
-    <div class="muted" style="margin-top:8px;">
-      © 2026 Miniforge.ai
+    <div class="frame">
+      <div class="footer-grid">
+        <div>
+          <h2>Products</h2>
+          <ul>
+            <li><a href="/risk">Thesium Risk</a></li>
+            <li><a href="/career">Thesium Career</a></li>
+            <li><a href="/time">Thesium Time</a></li>
+            <li><a href="/research">Thesium Research</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Thesium Risk</h2>
+          <ul>
+            <li><a href="https://apps.apple.com/us/app/thesium/id6761789951?mt=12">Mac App Store</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/privacy">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:support@miniforge.ai">support@miniforge.ai</a></li>
+            <li><a href="mailto:privacy@miniforge.ai">privacy@miniforge.ai</a></li>
+            <li><a href="https://miniforge.ai">miniforge.ai</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="colophon">
+        Thesium is a product line of Miniforge AI. © 2026 Miniforge.ai.
+      </p>
     </div>
   </footer>
+
+  <script src="/assets/theme.js"></script>
 </body>
 </html>
