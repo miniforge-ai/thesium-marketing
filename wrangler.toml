@@ -21,9 +21,9 @@ compatibility_date = "2026-04-19"
 directory = "./"
 not_found_handling = "404-page"
 
-# Custom domains are attached through the Cloudflare dashboard, not
-# from here. Declaring them as `routes` would make every deploy fail
-# for any hostname whose zone is not yet on Cloudflare, and a failed
-# deploy stops shipping the App Store-required /privacy and /support
-# pages. thesium.me still needs its zone migrated — see the "Adding
-# thesium.me" runbook in README.md.
+# Custom domains stay attached through the Cloudflare dashboard, not
+# from here. Declaring them as `routes` makes every deploy fail for any
+# hostname whose zone is not on Cloudflare, and a failed deploy stops
+# shipping the App Store-required /privacy and /support pages. Four
+# hostnames are bound: thesium.me, www.thesium.me, thesium.app,
+# www.thesium.app — see "Hostnames" in README.md.

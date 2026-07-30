@@ -58,31 +58,26 @@ the page follows `prefers-color-scheme`. The read happens in a blocking
 inline `<script>` in each `<head>` so there is no flash of the wrong
 theme; `assets/theme.js` only wires the button.
 
-## Adding thesium.me
+## Hostnames
 
-`thesium.me` is on Google Domains nameservers serving a Squarespace
-parking page. To point it at this Worker:
+Four, all on Cloudflare, all serving this Worker as of 2026-07-29:
+`thesium.me`, `www.thesium.me`, `thesium.app`, `www.thesium.app`.
+Neither domain redirects to the other — both serve, and every page
+carries a `rel="canonical"` naming `thesium.me`.
 
-1. Cloudflare dashboard → **Add a site** → `thesium.me`. Let it import
-   the existing DNS records.
-2. **Check the imported MX and TXT records before changing anything.**
-   If mail runs on this domain, losing those breaks it.
-3. At the registrar, change the nameservers to the pair Cloudflare
-   assigns. Wait for the zone to go active.
-4. Delete the Squarespace `A` and `CNAME` records (the `198.185.159.x`
-   and `198.49.23.x` addresses) and any `_domainconnect` record.
-5. Workers & Pages → `thesium-risk` → **Custom Domains** → add
-   `thesium.me`, then `www.thesium.me`.
-6. Confirm every page returns 200 on the new host, then cancel the
-   Squarespace parking subscription.
+Custom domains are attached through the Cloudflare dashboard
+(Workers & Pages → `thesium-risk` → Custom Domains), not in
+`wrangler.toml`. The comment at the bottom of that file explains why.
 
-Custom domains are attached in the dashboard, not in `wrangler.toml` —
-the comment at the bottom of that file explains why.
+If a hostname starts failing, check in this order: the custom-domain
+binding still lists it, the zone's `A`/`CNAME` records still point at
+the Worker, and the zone is still on Cloudflare nameservers. When
+`thesium.me` moved off Google Domains, its `MX` and `TXT` records were
+carried over — do not prune records on that zone without checking mail
+first.
 
-The `rel="canonical"` tags already point at `thesium.me`. Until step 5
-completes they name a host that does not serve this site. That is
-tolerable only because the Squarespace parking page is `noindex` and
-has nothing to compete with — do not leave the cutover half-done.
+`thesium.app/privacy` and `thesium.app/support` are the URLs in App
+Store Connect. Both must keep returning 200 on that exact host.
 
 ## Deploy
 
